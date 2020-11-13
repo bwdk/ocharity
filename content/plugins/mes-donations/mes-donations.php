@@ -1,0 +1,319 @@
+<?php
+/*
+Plugin Name: Mes Donations
+Description: Plugin qui récupère la liste des donations et des donateurs
+Author: oCharity
+Version: 1.0.0
+*/
+// Sécurisation du plugin
+if (!defined('WPINC')) {
+    die();
+}
+add_action('admin_menu', 'donation_plugin_setup_menu');
+function donation_plugin_setup_menu()
+{
+    add_menu_page('Liste des donations', 'Donations', 'manage_options', 'donations_list', 'donations_init', 'dashicons-share-alt', 6);
+}
+function donations_init()
+{
+    global $wpdb;
+    // Table wp_donator
+    $donation_amt_table = $wpdb->prefix . 'donator';
+    // Table wp_posts
+    $posts_table = $wpdb->prefix . 'posts';
+    // Table wp_users
+    $users_table = $wpdb->prefix . 'users';
+    // Variable globale - The post object for the current post.
+    global $post;
+    // ID du custom post type en cours
+    //  $page_id = $post->ID;
+    //Récupère les données de la table wp_donator
+    $get_donation_list = $wpdb->get_results("SELECT * 
+        FROM $donation_amt_table 
+        ORDER BY date(created_at) DESC");
+    //Calcule le montant récolté aujourd'hui
+    $currentDay = $wpdb->get_var("SELECT SUM(amount)
+        FROM $donation_amt_table
+        ");
+    //Calcule le montant récolté les 7 derniers jours
+    $lastWeek = $wpdb->get_var("SELECT SUM(amount)
+        FROM $donation_amt_table
+        WHERE DATE (created_at) >= now() - interval 7 day");
+    //Calcule le montant récolté les 30 derniers jours
+    $lastMonth = $wpdb->get_var("SELECT SUM(amount)
+        FROM $donation_amt_table
+        WHERE DATE (created_at) >= now() - interval 30 day");
+
+    // Notation française
+    $sumOverCurrentDay = number_format($currentDay, 2, ',', ' ');
+
+    // Notation française
+    $sumOverLastWeek = number_format($lastWeek, 2, ',', ' ');
+
+    $sumOverLastMonth = number_format($lastMonth, 2, ',', ' ');
+
+?>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo plugin_dir_url(__FILE__); ?>tablesorter/js/popper.min.js"></script>
+    <script src="<?php echo plugin_dir_url(__FILE__); ?>tablesorter/js/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__); ?>/tablesorter/css/bootstrap-v4.min.css">
+    <link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__); ?>/tablesorter/css/theme.bootstrap_4.css">
+    <script src="<?php echo plugin_dir_url(__FILE__); ?>tablesorter/js/jquery.tablesorter.js"></script>
+    <script src="<?php echo plugin_dir_url(__FILE__); ?>tablesorter/js/jquery.tablesorter.widgets.js"></script>
+    <link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__); ?>tablesorter/addons/pager/jquery.tablesorter.pager.css">
+    <script src="<?php echo plugin_dir_url(__FILE__); ?>tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+    <style id="css">
+        .tablesorter-pager .btn-group-sm .btn {
+            font-size: 1.2em;
+        }
+
+        h2 {
+            padding-bottom: 20px;
+        }
+
+        .dropdown {
+            padding-bottom: 70px;
+            margin-right: 20px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .display {
+            width: 10%;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        .displayWeek {
+            display: none;
+        }
+
+        .displayMonth {
+            display: none;
+        }
+
+        .wrapper {
+            padding-top: 30px;
+            padding-right: 70px;
+            padding-left: 55px;
+        }
+
+        thead {
+            padding-top: 20px;
+        }
+
+        .euro {
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <script id="js">
+        $(function() {
+            $("table").tablesorter({
+                    theme: "bootstrap",
+                    widthFixed: true,
+                    // widget code contained in the jquery.tablesorter.widgets.js file
+                    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+                    // the uitheme widget is NOT REQUIRED!
+                    widgets: ["filter", "columns", "zebra"],
+                    widgetOptions: {
+                        // using the default zebra striping class name, so it actually isn't included in the theme variable above
+                        // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+                        zebra: ["even", "odd"],
+                        // class names added to columns when sorted
+                        columns: ["primary", "secondary", "tertiary"],
+                        // reset filters button
+                        filter_reset: ".reset",
+                        // extra css class name (string or array) added to the filter element (input or select)
+                        filter_cssFilter: [
+                            'form-control',
+                            'form-control',
+                            'form-control', // select needs custom class names :(
+                            'form-control',
+                            'form-control',
+                            'form-control',
+                            'form-control'
+                        ]
+                    }
+                })
+                .tablesorterPager({
+                    // target the pager markup - see the HTML block below
+                    container: $(".ts-pager"),
+                    // target the pager page select dropdown - choose a page
+                    cssGoto: ".pagenum",
+                    // remove rows from the table to speed up the sort of large tables.
+                    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+                    removeRows: false,
+                    // output string - default is '{page}/{totalPages}';
+                    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+                    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+                });
+        });
+    </script>
+    <script>
+        $(function() {
+            // filter button demo code
+            $('button.filter').click(function() {
+                var col = $(this).data('column'),
+                    txt = $(this).data('filter');
+                $('table').find('.tablesorter-filter').val('').eq(col).val(txt);
+                $('table').trigger('search', false);
+                return false;
+            });
+            // toggle zebra widget
+            $('button.zebra').click(function() {
+                var t = $(this).hasClass('btn-success');
+                $('table')
+                    .toggleClass('table-striped')[0]
+                    .config.widgets = (t) ? ["filter"] : ["filter", "zebra"];
+                $(this)
+                    .toggleClass('btn-danger btn-success')
+                    .find('span')
+                    .text(t ? 'disabled' : 'enabled');
+                $('table').trigger('refreshWidgets', [false]);
+                return false;
+            });
+        });
+    </script>
+    <div class="wrapper">
+        <h2>Liste des donations</h2>
+        <!--Dropdown button pour afficher le montant récolté aujourd'hui, les 7 derniers jours et les 30 derniers jours-->
+        <div class="d-flex justify-content-start">
+            <div class="dropdown">
+                <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                    Total collecté
+                </button>
+                <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+             <a class="dropdown-item" id="day" href="">Aujourd'hui</a>
+         <a class="dropdown-item" id="week" href="">Les 7 derniers jours</a>
+            <a class="dropdown-item" id="month" href="">Les 30 derniers jours</a>  
+        </div> -->
+            </div>
+
+
+            <div class="display">
+                <div class="displayDay">
+                    <?php if ($sumOverCurrentDay === null) {
+                        echo 0;
+                    } else {
+                        echo esc_attr($sumOverCurrentDay);
+                    }
+                    ?>
+                </div>
+                <div class="displayWeek">
+                    <?php echo esc_attr($sumOverLastWeek); ?>
+                </div>
+                <div class="displayMonth">
+                    <?php echo esc_attr($sumOverLastMonth); ?>
+                </div>
+            </div>
+            <div>
+                <p class="euro">€</p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('#week').click(function() {
+                $('.displayDay').hide();
+                $('.displayWeek').show();
+                $('.displayMonth').hide();
+                // return false;
+                event.preventDefault();
+            })
+            $('#day').click(function() {
+                $('.displayDay').show();
+                $('.displayWeek').hide();
+                $('.displayMonth').hide();
+                // return false;
+                event.preventDefault();
+            })
+            $('#month').click(function() {
+                $('.displayDay').hide();
+                $('.displayWeek').hide();
+                $('.displayMonth').show();
+                event.preventDefault();
+                // return false;
+            })
+        </script>
+        <!--Réinitialisation des filtres du tableau-->
+        <div class="d-flex flex-row-reverse">
+            <div class="bootstrap_buttons d-flex flex-row-reverse">
+                <button type="button" class="reset btn btn-info" data-column="0" data-filter="">Réinitialiser les filtres</button>
+            </div>
+        </div>
+        <br>
+        <!--Entête du tableau-->
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Date du don</th>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>ID</th>
+                    <th>Nom de la collecte</th>
+                    <th>Montant du don (€)</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th colspan="7" class="ts-pager">
+                        <!--Pagination du tableau-->
+                        <div class="form-inline">
+                            <div class="btn-group btn-group-sm mx-1" role="group">
+                                <button type="button" class="btn btn-secondary first" title="first">&#8676;</button>
+                                <button type="button" class="btn btn-secondary prev" title="previous">&larr;</button>
+                            </div>
+                            <span class="pagedisplay"></span>
+                            <div class="btn-group btn-group-sm mx-1" role="group">
+                                <button type="button" class="btn btn-secondary next" title="next">&rarr;</button>
+                                <button type="button" class="btn btn-secondary last" title="last">&#8677;</button>
+                            </div>
+                            <!--Nombre de lignes par page-->
+                            <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+                                <option selected="selected" value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="all">All Rows</option>
+                            </select>
+                            <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+                        </div>
+                    </th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <!--Boucle sur la liste des donations se trouvant dans la table wp_donator, récupération en SQL des infos que l'on veut afficher dans le tableau-->
+                <?php foreach ($get_donation_list as $get_donation_member) { ?>
+                    <tr>
+                        <?php
+                        // Récupère la date avec l'heure
+                        $originalDate = $get_donation_member->created_at;
+                        // Change la date au format européean + enlève l'heure
+                        $displayDate = date("d-m-Y", strtotime($originalDate));
+                        // Récupère Id de la collecte (Table wp_posts)
+                        $collectId = $get_donation_member->collecte_id;
+                        // Récupère le nom de la collecte via son ID (Table wp_posts)
+                        $postName = get_the_title($get_donation_member->collecte_id);
+                        // Récupère l'email du donateur via son ID (Table wp_users)
+                        $EmailName = get_user_by('id', ($get_donation_member->donor_id));
+                        ?>
+                        <td><?php echo esc_attr($displayDate); ?></td>
+                        <td><?php echo esc_attr($get_donation_member->firstname); ?></td>
+                        <td><?php echo esc_attr($get_donation_member->lastname); ?></td>
+                        <td><?php echo esc_attr($EmailName->user_email);  ?></td>
+                        <td><?php echo esc_attr($collectId);  ?></td>
+                        <td><?php echo esc_attr($postName);  ?></td>
+                        <td><?php echo esc_attr($get_donation_member->amount);  ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+
+    </div>
+<?php
+}

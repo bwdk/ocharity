@@ -1,0 +1,62 @@
+.main-success {
+
+    .section__container {
+
+        width: 80%;
+        flex-direction: row;
+
+
+
+        &__title {
+            text-align: center;
+            flex: 0 0 100%;
+            margin-bottom: 30px;
+        }
+
+        .block-success {
+            display: flex;
+            order: 1;
+      
+
+
+            .success {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+                grid-gap: 3rem;
+                align-items: center;
+
+                &__article {
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    width: 100%;
+
+                    border: 1px solid rgb(179, 197, 179);
+                    height: 415px;
+                    margin-bottom: 40px;
+
+                    &__image {
+                       // position: relative;
+                        width: 100%;
+                    }
+
+                    &__title {
+                        margin-top: 30px;
+                    }
+
+                    &__button {
+                        position: relative;
+                        top: 50px;
+                    }
+
+                }
+
+            }
+
+        }
+
+
+    }
+}

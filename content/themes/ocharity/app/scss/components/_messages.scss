@@ -1,0 +1,38 @@
+.message__fail {
+    text-align: center;
+    border: 1px solid rgb(204, 117, 117);
+    background-color: rgb(251, 162, 162);
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.message__success {
+    text-align: center;
+    border: 1px solid rgb(117, 204, 117);
+    background-color: rgb(162, 251, 162);
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.message__welcome {
+    text-align: center;
+    border: 1px solid rgb(117, 145, 204);
+    background-color: rgb(162, 218, 251);
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    p {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,49 @@
+main {
+    margin-bottom: 100px;
+
+    .section__title {
+        text-align: center;
+        flex: 0 0 100%;
+        // background-color: green;
+
+    }
+
+    .section__tpl {
+        display: flex;
+        margin: 0 auto;
+        width: 80%;
+        margin-top: 50px;
+        justify-content: center;
+
+        &__block__login-page {
+            flex-direction: column;
+            align-self: center;
+            margin: 0 20px;
+        }
+
+    }
+
+    .cat__list {
+        margin-bottom: 25px;
+        margin-left: 10px;
+        background-color: #78CAAC;
+        border: 1px solid #78CAAC;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 14px;
+        color: $title-color;
+        line-height: 40px;
+    }
+
+    @media only screen and (max-height: 930px) {
+        .section__tpl {
+            width: 100%;
+        }
+
+
+
+    }
+
+
+
+}

@@ -1,0 +1,53 @@
+@charset 'UTF-8';
+
+@import '~reset-css/sass/reset';
+
+@import 'abstracts/vars';
+
+
+@import 'components/action-button',
+'components/action-button-linear',
+'components/menu',
+'components/cards',
+'components/form',
+'components/sidebar',
+'components/receipt',
+'components/top-button',
+'components/campaign-data',
+'components/messages',
+'components/success-card-2',
+'components/actions-card-2';
+
+@import 'base/base',
+'base/typo';
+
+@import 'layout/content',
+'layout/header',
+'layout/section',
+'layout/text-title',
+'layout/section-tpl',
+'layout/footer';
+
+@import 'sections/about/title',
+'sections/galery/galery',
+'sections/contact/contact',
+'sections/404/404';
+
+@import 'sections/homepage/categories',
+'sections/homepage/slideshow',
+'sections/homepage/our-actions',
+'sections/homepage/main-gallery',
+'sections/homepage/countries',
+'sections/homepage/grid-cards',
+'sections/homepage/counter',
+'sections/homepage/categories',
+'sections/success/success',
+'sections/success/our-success',
+'sections/fundraiser/en-cours',
+'sections/fundraiser/signout',
+'sections/user-account/user';
+
+@import '~font-awesome/scss/font-awesome';
+
+@import 'shame',
+'home-style';

@@ -1,0 +1,45 @@
+// extenders
+.animate {
+    transition: all 0.3s;
+}
+
+p.login-remember{
+    margin-bottom: 25px;
+}
+
+// input#wp-submit.button.button-primary {
+//     font-family: "Poppins", sans-serif, Helvetica, Arial, sans-serif;
+// }
+
+//input#wp-submit.button.button-primary,
+.action-button-linear {
+    width: max-content;
+
+    border: 3px solid $main-color;
+    color: $main-color;
+    border-radius: 5px;
+    padding: 13px 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size:14px;
+    letter-spacing: 0.75px;
+
+
+    &:hover {
+        color: white;
+        background: $main-color;
+        padding: 13px 30px;
+        border: 3px solid $main-color;
+    }
+
+    a {
+        text-decoration: none;
+        color: white; 
+    }
+
+    a:hover {
+        color: white;
+        background: $main-color;
+    }
+    
+}

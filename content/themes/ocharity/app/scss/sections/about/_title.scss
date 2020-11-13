@@ -1,0 +1,22 @@
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: $height;
+    background-image: url("https://source.unsplash.com/0GBxtiFvzXE/2400x1600");
+
+
+    h2 {
+        font-size: 3em;
+        color: $title-color;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-size: $font-text;
+        color: #fff;
+    }
+
+
+}

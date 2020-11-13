@@ -1,0 +1,174 @@
+.footer {
+    display: flex;
+    margin-top: 2em;
+    width: 100%;
+    flex-direction: column;
+
+
+
+    .footer__list {
+        columns: 3;
+    }
+
+    &__charity-address {
+        line-height: 27px;
+        // padding-left: 100px;
+        display: flex;
+        margin-left: 5%;
+
+        .address {
+            margin-right: 45px;
+        }
+
+        li {
+            font-size: 10px;
+        }
+    }
+
+
+    &__topfooter {
+        padding: 35px 65px;
+        display: flex;
+        justify-content: space-around;
+        background-color: $bg-alt-color;
+
+        &-logo {
+
+            img {
+                padding: 8px 0 0 0;
+                width: 18em;
+            }
+        }
+
+        &-summary {
+            display: flex;
+            //width: 50%;
+
+            ul {
+                margin-left: 20%;
+            }
+
+            li {
+                line-height: 23px;
+            }
+        }
+
+
+
+    }
+
+    &__subfooter {
+        padding: 20px 250px;
+        background-color: $main-color;
+        color: white;
+        font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+        font-size: $font-s;
+
+        ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        a {
+            color: white;
+        }
+
+        &-left li {
+            margin-right: 30px;
+        }
+
+    }
+
+
+    @media only screen and (max-width: 1220px) {
+        &__topfooter {
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+
+        .footer__list {
+            columns: 2;
+            margin-left: 100px;
+            margin-top: 20px;
+        }
+
+        .footer__charity-address {
+            padding-left: 16px;
+            padding-right: 68px;
+            margin-top: 20px;
+
+        }
+
+        .footer__subfooter {
+            padding: 20px 20px;
+
+        }
+
+        .footer__subfooter ul li {
+            // margin-left: 10px;
+            font-size: 13px;
+
+            a {
+                margin-right: -70px;
+            }
+        }
+
+        .footer__list {
+            display: none;
+        }
+
+
+    }
+
+
+    @media only screen and (max-width: 850px) {
+
+        .footer__charity-address {
+            margin-top: 20px;
+            padding-left: 10%;
+            margin-left: 10%;
+
+        }
+
+        .footer__topfooter-summary li {
+            line-height: 40px;
+            margin-right: 33px;
+
+            a {
+                font-size: 16px;
+            }
+        }
+
+        .footer__list {
+            display: none;
+        }
+
+    }
+
+    @media only screen and (max-width: 520px) {
+
+        .footer__charity-address {
+            display: none;
+
+        }
+
+        .footer__topfooter-logo img {
+            padding: 5px 0 0 50px;
+            width: 18em;
+        }
+
+        .footer__list {
+            display: none;
+        }
+
+        .footer__subfooter {
+            padding: 20px 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+    }
+
+}

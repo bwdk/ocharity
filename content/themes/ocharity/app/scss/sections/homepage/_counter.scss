@@ -1,0 +1,67 @@
+.about-counter {
+	width: 100%;
+	height: 250px;
+	background: #f3fafa;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+
+	.call-toaction {
+		display: flex;
+		align-items: flex-end;
+		align-self: center;
+		margin-top: 40px;
+
+	}
+}
+
+
+#counter {
+	padding-top: 13px;
+	//	width: 60%;
+	margin: 0 auto;
+	//display: grid;
+	//	grid-template-columns: 1fr 1fr 1fr 1fr;
+	display: flex;
+	flex-direction: row;
+
+	li {
+		font-size: 40px;
+		color: #53b793;
+		font-weight: 1000;
+		margin: 0px;
+		padding: 0px;
+		margin-left: 50px;
+	}
+
+	h1 {
+		margin: 0px;
+		color: #6e7a83;
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 930px) {
+	#counter {
+		flex-direction: column;
+	}
+
+	.call-toaction {
+		flex-wrap: wrap;
+		margin-left: 100px;
+		height: 20%;
+
+	}
+
+	#counter li {
+		margin-left: 0px;
+
+	}
+
+	.about-counter {
+		height: 525px;
+	}
+
+}

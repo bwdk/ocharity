@@ -1,0 +1,31 @@
+.section__container {
+
+    &__success {
+        text-align: center;
+        border: 1px solid rgb(117, 204, 117);
+        background-color: rgb(162, 251, 162);
+        padding: 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+   
+
+    .receipt__table {
+
+        &__head {
+            background-color: #53B793;
+        }
+
+        thead th {
+            vertical-align: bottom;
+            border-bottom: none;
+        }
+
+
+    }
+}

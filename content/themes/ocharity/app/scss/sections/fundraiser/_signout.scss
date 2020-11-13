@@ -1,0 +1,44 @@
+.raising__form {
+    display: flex;
+    flex-direction: column;
+
+
+    &__text {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-weight: bold;
+        text-align: left;
+
+        &--subtn {
+            margin: 25px 0;
+            font-weight: bold;
+        }
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        &--btn {
+            // margin-top: 25px;
+            width: max-content;
+
+        }
+
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .raising__form {
+        padding: 30px;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .formdiv {
+        margin-top: 70px;
+        background: #F9F9F9;
+        padding: 0px 0px;
+    }
+}

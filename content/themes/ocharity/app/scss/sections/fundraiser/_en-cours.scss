@@ -1,0 +1,173 @@
+.fundraiser-grid {
+	display: grid;
+	grid-template-columns: 60% 40%;
+	grid-template-rows: auto;
+	grid-gap: 80px;
+}
+
+.fundraiser__image img {
+	width: 100%;
+	height: auto;
+	margin-top: 10px;
+}
+
+.raising__text {
+
+	h2 {
+		padding-top: 0px;
+		margin-bottom: 35px;
+	}
+
+
+	p {
+		font-size: 17px;
+		line-height: 25px;
+	}
+
+}
+
+
+.fundraiser__progress-box {
+	border: 2px solid #dfdfdf;
+	padding: 30px;
+}
+
+.fundraiser__progress-box__bar {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	font-weight: bold;
+	padding-bottom: 20px;
+
+	p {
+		font-size: 25px;
+	}
+}
+
+.lastp {
+	text-align: right;
+}
+
+.progress-div progress {
+	width: 100%;
+	height: 25px;
+}
+
+.fundraiser__progress-box__social {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.fundraiser__progress-box__social ul li {
+	list-style: none;
+	display: inline;
+	padding: 5px;
+}
+
+.fundraiser__progress-box__social ul li a {
+	text-decoration: none;
+	font-size: 20px;
+}
+
+.fundraiser__current-state {
+	margin-top: 30px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.fundraiser__current-state p {
+	margin: 0px;
+	line-height: 30px;
+}
+
+.bold {
+	font-weight: 800;
+	font-size: 20px;
+}
+
+.fundraiser__current-state__donors {
+	padding-left: 20px;
+}
+
+.fundraiser__current-state__raised {
+	text-align: right;
+	padding-right: 20px;
+}
+
+.formdiv {
+	margin-top: 70px;
+	background: $bg-color;
+	padding: 80px 80px;
+
+}
+
+h2 {
+	font-size: 40px;
+
+}
+
+.field {
+	width: 100%;
+	margin-bottom: 20px;
+	margin-left: 0px;
+}
+
+.field label {
+	display: block;
+	color: #66706f;
+	font-weight: 600;
+}
+
+.field input {
+	border: none;
+	width: 100%;
+	height: 40px;
+	margin-top: 4px;
+	margin-left: 0px;
+}
+
+.field select {
+	background: white;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+
+	width: 100%;
+	margin: 0px;
+	height: 40px;
+	margin-top: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+	.raising__text {
+		text-align: left;
+		margin: 25px 44px 50px;
+	}
+
+	.fundraiser-grid {
+		display: flow-root;
+		grid-template-columns: 100%;
+	}
+
+	.section__container {
+		width: 100%;
+	}
+
+	.formdiv {
+		margin-top: 30px;
+		background: #D7D6D6;
+		padding: 80px 80px;
+	}
+
+
+}
+
+@media only screen and (max-width: 904px) and (min-width: 769px) {
+
+	.action-button {
+		padding: 3px 12px;
+		margin: 5px;
+	}
+}

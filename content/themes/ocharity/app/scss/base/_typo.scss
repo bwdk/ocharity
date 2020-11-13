@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+body,
+header,
+main,
+a {
+    font-family: $font-family, $font-family-fallback;
+    text-decoration: none !important;
+    color: $text-color;
+    font-size: 16px;
+}
+
+a:hover {
+    color: #080808;
+    text-decoration: none;
+}
+
+.about__text{
+    text-align:left;
+    margin-bottom: 20px;
+}

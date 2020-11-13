@@ -1,0 +1,137 @@
+/* Original pulsing dots by sharla */
+@keyframes pulse {
+	0% {
+		box-shadow: 0px 0px 0px 0px rgba(83, 183, 147, 1);
+	}
+
+	100% {
+		box-shadow: 0px 0px 0px 7px rgba(52, 106, 180, 0.0);
+	}
+}
+
+.map-container {
+	padding: 70px 30px 100px 30px;
+}
+
+.world-pic {
+	width: 100%;
+	max-width: 100%;
+}
+
+#map {
+	position: relative;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	animation: pulse 1.5s infinite ease-out;
+	background: $main-color;
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+
+	&:before {
+		content: '';
+		position: absolute;
+		width: 3px;
+		height: 3px;
+		border-radius: 50%;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		margin: auto;
+		background: rgba(113, 219, 178, 0.4);
+	}
+
+	&:nth-child(odd) {
+		animation: pulse 1.5s infinite ease-out 0.3s;
+	}
+
+	&-1 {
+		top: 44%;
+		left: 45%;
+	}
+
+	&-2 {
+		top: 52%;
+		left: 42.5%;
+	}
+
+	&-3 {
+		top: 28%;
+		left: 15%;
+	}
+
+	&-4 {
+		top: 43%;
+		left: 56%;
+	}
+
+	&-5 {
+		top: 70%;
+		left: 33%;
+	}
+
+	&-6 {
+		top: 34.5%;
+		left: 47%;
+	}
+
+	&-7 {
+		top: 45%;
+		left: 77%;
+	}
+
+	&-8 {
+		top: 60%;
+		left: 80%;
+	}
+
+	&-9 {
+		top: 74%;
+		left: 59%;
+	}
+
+	&-10 {
+		top: 55%;
+		left: 68%;
+	}
+
+	&-11 {
+		top: 79%;
+		left: 85%;
+	}
+
+	@media (min-width: 768px) {
+		width: 16px;
+		height: 16px;
+
+		&:before {
+			width: 4px;
+			height: 4px;
+		}
+
+		@keyframes pulse {
+			0% {
+				box-shadow: 0px 0px 0px 0px rgba(83, 183, 147, 1);
+			}
+
+			100% {
+				box-shadow: 0px 0px 0px 10px rgba(52, 106, 180, 0.0);
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width: 760px) {
+	.map-container {
+		display: none;
+	}
+}

@@ -1,0 +1,35 @@
+.section__tpl {
+
+    .sidebar {
+        height: 40%;
+        border: 1px solid rgb(185, 185, 185);
+        padding: 35px;
+        width: 25%;
+        margin: 0 4rem;
+        order: 2;
+        text-align: center;
+
+
+        &__title {
+            font-size: $font-l;
+            margin-bottom: 25px;
+            margin-top: 45px;
+
+        }
+
+        &__list {
+
+            li {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 930px) {
+
+        .sidebar {
+            display: none;
+        }
+
+    }
+}

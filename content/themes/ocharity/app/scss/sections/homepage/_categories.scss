@@ -1,0 +1,43 @@
+.main-activities {
+    .section__container {
+        width: 80%;
+        display: flex;
+        flex-flow: column wrap;
+        .activities-box {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            .content {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                flex-direction: column;
+                padding: 15px;
+                img {
+                    border-radius: 50%;
+                    width: 90%;
+                    &:hover {
+                        /* offset-x | offset-y | blur-radius | spread-radius | color */
+                        box-shadow: 1rem 1rem 7rem 1rem rgba(0, 0, 0, .09);
+                      }
+                    }
+                h3 {
+                    font-size: $font-m;
+                    font-weight: bold;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+                p {
+                    color: #6b767f;
+                }
+            }
+            @media screen and (max-width: 767px) {
+                flex-direction: column;
+                margin-bottom: 20px;
+                .content {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+.campaign-information {
+    height: 31%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.campaign-raised .campaign-goal {
+    height: 100%;
+    width: 35%;
+    flex: 0 32%;
+    margin-bottom: 2%;
+    /* (100-32*3)/2 */
+    text-align: center;
+    margin: auto;
+}
+
+.campaign-raised {
+    padding-left: 35px;
+}
+
+.campaign-goal {
+    padding-right: 35px;
+}
+
+@media only screen and(max-height: 930px) {
+    .campaign-raised {
+        padding-left: 0;
+    }
+    
+    .campaign-goal {
+        padding-right: 0;
+    }
+}
+
+
+.funded {
+    height: 100%;
+    flex: 0 32%;
+    width: 30%;
+    margin-bottom: 2%;
+    /* (100-32*3)/2 */
+    border-left: 1px solid rgba(0, 0, 0, .1);
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    text-align: center;
+
+}
+
+
+// text
+.campaign-title {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    color: #404040;
+}
+
+.campaign-amount {
+    width: 35%;
+    line-height: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: $main-color;
+}
+
+.funded-percent {
+    font-size: 24px;
+    color: $main-color;
+    font-weight: 600;
+    padding-top: 35px;
+    text-align: center;
+    vertical-align: middle;
+}

@@ -1,0 +1,89 @@
+.section__tpl {
+
+    width: 60%;
+
+
+    .section__cards__actions {
+        order: 1;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+        grid-gap: 5rem;
+        cursor: pointer;
+        height: 100%;
+        margin: 0 10%;
+        width: 100%;
+
+
+        .card {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            border-radius: 0.4rem;
+            background-color: #fff;
+            border-radius: .4rem;
+            overflow: hidden;
+            box-shadow: 0 1rem 5rem rgba(0, 0, 0, .1);
+            cursor: pointer;
+            transition: .2s;
+
+            &:hover {
+                box-shadow: 0 3rem 6rem rgba(0, 0, 0, .2);
+            }
+
+            &__img {
+                display: block;
+                width: 100%;
+                object-fit: cover;
+            }
+
+
+            &__info {
+                height: 100%;
+                margin-bottom: 0.5em;
+                padding: 2rem;
+                line-height: 28px;
+            }
+
+
+            &__title {
+                margin-top: 10px;
+                margin-bottom: 42px;
+                display: block;
+                font-size: 18px;
+            }
+        }
+
+        .description {
+            color: gray;
+            display: block;
+            margin-bottom: 40px;
+            text-justify: distribute;
+        }
+
+        .action-button {
+            margin-top: 25px;
+        }
+
+        .progressbar {
+            -webkit-appearance: none;
+            // appearance: none;
+            height: 15px;
+            margin-bottom: 10px;
+
+
+        }
+
+        .progressbar[value]::-webkit-progress-value {
+            background-image: #53b793;
+            border-radius: 2px;
+            background-size: 35px 20px, 100% 100%, 100% 100%;
+
+
+        }
+
+
+    }
+
+}

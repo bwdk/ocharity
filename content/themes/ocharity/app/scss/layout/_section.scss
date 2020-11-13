@@ -1,0 +1,42 @@
+.section {
+
+    &__container {
+
+        h2,
+        p {
+            align-self: center;
+        }
+
+        h2 {
+            font-size: $font-l;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+
+        display: flex;
+        flex-flow: column wrap;
+
+        padding: 85px 15px 93px 15px;
+        margin: 0 auto;
+
+        @media (min-width: 1200px) {
+            width: 1170px;
+        }
+
+        @media (min-width: 992px) {
+            width: 970px;
+        }
+
+        @media (min-width: 768px) {
+            //width: 750px;
+
+            width: 80%;
+        }
+
+
+    }
+
+
+
+}
