@@ -9,11 +9,11 @@ RewriteRule ^(.*)$ index.php/$1
 # Toute modification des directives entre ces marqueurs sera outrepassée.
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /projet-ocharity/
+RewriteBase /ocharity/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /projet-ocharity/index.php [L]
+RewriteRule . /ocharity/index.php [L]
 </IfModule>
 
 # END WordPress

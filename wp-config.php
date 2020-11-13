@@ -66,7 +66,7 @@ define('NONCE_SALT',       'Z.PY;<k1c,|#wDfhhb5%8ibGu0oSbx$in*0s@kj=EWtvLw|6x{AX
 $table_prefix = 'wp_';
 
 // https://www.php.net/manual/fr/function.rtrim.php
-define('WP_HOME', rtrim('http://localhost/projet-ocharity/', '/'));
+define('WP_HOME', rtrim('http://localhost/ocharity/', '/'));
 define('WP_SITEURL', WP_HOME . '/wp');
 define( 'WP_CONTENT_URL', WP_HOME . '/content' );
 define( 'WP_CONTENT_DIR', dirname( ABSPATH ) . '/content' );
