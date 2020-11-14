@@ -29,7 +29,7 @@ FROM $donation_amt_table");
 $sumCollectDone = $wpdb->get_var("SELECT count(*) FROM $terms_table WHERE slug = 'reussie'");
 
 // Enlève les chiffres après la virgule
-$percentageReached = floor($percentage);
+//$percentageReached = floor($percentage);
 
 ?>
 
