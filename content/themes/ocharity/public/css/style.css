@@ -435,7 +435,7 @@ input.input {
   .section__tpl .section__cards__actions {
     order: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     grid-gap: 5rem;
     cursor: pointer;
     height: 100%;
@@ -1486,7 +1486,7 @@ h2 {
 .fundraiser__image img {
   width: 100%;
   height: auto;
-  margin-top: 10px; }
+  margin: 20px 0 20px; }
 
 .raising__text h2 {
   padding-top: 0px;
