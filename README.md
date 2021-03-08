@@ -33,5 +33,8 @@ Travail d’équipe
 Créativité
 Un projet WordPress complet permettant de mettre en application tout ce qu’on aura vu dans la spécialisation, de l’intégration, à la création/personnalisation des fonctionnalité d'un thème, en passant par la conception d’un plugin pour récolter les dons, utilisation des API des passerelles de paiement... Peut être intéressant à présenter dans son portfolio lors de la recherche d’emploi.
 
+Utilisation:
 
-
+- Cloner le dossier
+- Copier le wp-config-sample en wp-config et le renseigner (BDD + salt + chemins du projet)
+- Editer le htaccess (chemins du projet)
