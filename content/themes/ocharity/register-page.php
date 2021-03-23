@@ -9,6 +9,8 @@ global $wp_roles, $errormsg;
 
 $errormsg = new WP_Error();
 
+
+
 $method = $_REQUEST;
 
 

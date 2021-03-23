@@ -10,7 +10,7 @@ $method = $_REQUEST;
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
+
 
     $password = $method['password'];
     $username = $method['username'];
@@ -53,16 +53,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 ]
             );
 
-
-        
-            $url_redirect = get_page_link().'?page_state=registered';
+            $urlParam = 'registered';
+            $url_redirect = esc_url(add_query_arg('page_state',  $urlParam, get_permalink()));
             echo "<script>location.href = '$url_redirect';</script>";
             exit;
         }
     }
 }
-?>
 
+
+?>
 
 
 <p class="raising__form__text">Vous devez être inscrit pour faire une promesse de don</p>

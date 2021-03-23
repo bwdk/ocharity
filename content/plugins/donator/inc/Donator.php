@@ -13,12 +13,6 @@ class Donator
     public function register_ct()
     {
         global $wpdb;
-        //      global $version;
-
-        //     $version = '1.1';
-        //   $installed_version = get_option("version");
-
-        //  if ($installed_version != $version) {
 
         $charset_collate = $wpdb->get_charset_collate();
         $tableNamePosts = $wpdb->prefix . "posts";

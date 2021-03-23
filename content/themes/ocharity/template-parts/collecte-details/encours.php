@@ -48,7 +48,8 @@ $percentageReached = floor($percentage);
 
             <!-- Affiche le pourcentage atteint en cours pour cette collecte -->
             <?php echo $percentageReached ?>
-            %</p>
+            %
+          </p>
 
           <p class="lastp"><?php the_field('objectif'); ?> €</p>
         </div>
@@ -135,6 +136,11 @@ $percentageReached = floor($percentage);
         endif;
 
         if (!is_user_logged_in() && $queryPageState->query['page_state'] ===  $urlLogin && $queryPageState->query['login'] === $urlEmpty) : ?>
+          <h2 class="formheading">Me connecter</h2>
+        <?php get_template_part('template-parts/form/login');
+        endif;
+
+        if (!is_user_logged_in() && $queryPageState->query['page_state'] ===  $urlRegistered) : ?>
           <h2 class="formheading">Me connecter</h2>
         <?php get_template_part('template-parts/form/login');
         endif;

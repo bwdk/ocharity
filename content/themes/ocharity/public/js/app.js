@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "6f7b7c352307b92d2517";
+/******/ 	var hotCurrentHash = "2149cefd253ce1ecdca7";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -906,7 +906,6 @@ var app = {
             },
 
             {
-
               duration: 2000,
               easing: 'swing',
               step: function () {
@@ -964,6 +963,13 @@ var app = {
       });
 
     // Mobile
+    app.menuMobile();
+
+
+
+  },
+
+  menuMobile: () => {
     let openMenu = document.querySelector(".menu");
     let closeMenu = document.querySelector(".close");
     let overlay = document.querySelector(".overlay");
@@ -975,9 +981,6 @@ var app = {
     closeMenu.addEventListener("click", () => {
       overlay.classList.remove("overlay--active");
     });
-
-
-
   },
 
   enableScrollex: function () {

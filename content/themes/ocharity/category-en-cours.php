@@ -27,7 +27,6 @@ global $post;
         ]
         ?>
 
-
         <?php
         $cats = get_categories($args);
         ?>
@@ -39,7 +38,7 @@ global $post;
 
 
         <?php
-        //On définit une requête qui permet d'afficher les éléments de la catégorie "en cours" avec un affichage de 4 posts par page
+        //On définit une requête qui permet d'afficher les éléments de la catégorie "en cours" avec un affichage de 9 posts par page
         $args = [
             'post_type' => 'collecte',
             'posts_per_page' => 9,
@@ -56,18 +55,18 @@ global $post;
 
         <?php
 
-        $wpqueryCollectesReussies = new WP_Query($args);
+        $wpqueryCollectesEncours = new WP_Query($args);
         ?>
     </div>
     <div class="section__tpl">
         <div class="section__cards__actions">
             <?php
 
-            //On créé une boucle permettant d'afficher l'ensemble des collectes ayant le statut réussi
+            //On créé une boucle permettant d'afficher l'ensemble des collectes ayant le statut en cours
 
-            if ($wpqueryCollectesReussies->have_posts()) :
-                while ($wpqueryCollectesReussies->have_posts()) :
-                    $wpqueryCollectesReussies->the_post();
+            if ($wpqueryCollectesEncours->have_posts()) :
+                while ($wpqueryCollectesEncours->have_posts()) :
+                    $wpqueryCollectesEncours->the_post();
                     if (has_term('en-cours', 'statut')) :
                         get_template_part('template-parts/collecte/current-actions-summary');
                     endif;
