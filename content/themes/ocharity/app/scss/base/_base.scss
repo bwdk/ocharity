@@ -10,6 +10,7 @@ body {
 }
 
 .main {
+    margin-bottom: 0px;
     min-height: calc(100vh - auto);
 }
 
@@ -20,24 +21,6 @@ body {
 .wrapper {
     width: 100%;
     overflow: hidden;
-
-    /// Sticky footer
-    // min-height: 100%;
-    // display: grid;
-    // grid-template-rows: auto 1fr auto;
-}
-
-body::-webkit-scrollbar {
-    width: 12px;
-}
-
-body::-webkit-scrollbar-track {
-    background-color: #e5e5e5;
-}
-
-body::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: $main-color;
 }
 
 
@@ -53,14 +36,59 @@ a {
     background-color: #f3fafa;
     margin-bottom: 0px;
 
+    .text-title {
+    padding: 80px 0 0 0;
+    }
+
     .section__tpl {
         display: flex;
-
-
 
         .calltoaction {
             text-align: center;
             padding: 85px 0 100px 0;
         }
+    }
+}
+
+.hero__frontpage {
+    margin-bottom: 0px;
+    padding: 235px 0 100px 0;
+    background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+    .hero-title {
+        color:#fff;
+        margin: auto;
+        width: 40%;
+
+        h2 {
+            text-align: center;
+            font-size: 45px;
+            font-weight:800;
+            line-height: 50px;
+        }
+
+        p {
+            text-align: center;
+            font-weight: 500;
+            font-size: 19px;	
+            padding: 20px 0 40px 0;
+            line-height: 30px;
+        }
+    
+    }
+
+    .calltoaction {
+        text-align: center;
+        padding: 20px 0 100px 0;
+    }
+
+    .action-button:hover {
+            color: white;
+            padding: 14px 45px;
+            border: 2.5px solid white;
+            background: none !important;
     }
 }

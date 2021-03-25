@@ -14,6 +14,8 @@
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+
   <?php
   wp_head();
   ?>
@@ -52,7 +54,7 @@
 
 
           <div class="search">
-            <form role="search" action="<?php echo home_url('/'); ?>" class="search__form" method="get" id="searchform">
+             <form role="search" action="<?php echo home_url('/'); ?>" class="search__form" method="get" id="searchform">
               <label for="" class="search__form__label">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </label>
@@ -60,22 +62,29 @@
               <input type="hidden" name="post_type" value="" />
             </form>
           </div>
-          <p class="login">
-            <?php if (is_user_logged_in()) {
-              global $current_user;
-              echo '<a href="' . home_url() . '/projet-ocharity/user-account/"> Hello ' . $current_user->user_nicename . ' </a> | ';
-              include('logout.php');
-            } else { ?>
-              <a href="<?= home_url() ?>/connexion">Se connecter | </a>
-              <a href="<?= home_url() ?>/inscription">S'inscrire</a>
-            <?php } ?>
-          </p>
+
+
+
+          <div class="login-block">
+            <i class="fa fa-user" aria-hidden="true"></i>
+              <div class="login">
+                <?php if (is_user_logged_in()) {
+                  global $current_user;
+                  echo '<a href="' . home_url() . '/projet-ocharity/user-account/"> Bonjour &nbsp;' . $current_user->user_nicename . ' </a> &nbsp; | &nbsp;';
+                  include('logout.php');
+                } else { ?>
+                  <a href="<?= home_url() ?>/connexion">Se connecter&nbsp; &nbsp;|&nbsp; &nbsp; </a>
+                  <a href="<?= home_url() ?>/inscription">S'inscrire</a>
+                <?php } ?>
+              </div>
+          </div>
+
         </div>
 
       </nav>
 
       <nav class="top__menu">
-        <a class="header__subbar-logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/public/images/logo-ocharity.png" alt="logo"></a>
+        <a class="header__subbar-logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/public/images/ocharity-logo.png" alt="logo"></a>
         <?php
         wp_nav_menu([
           'theme_location' => 'main-menu',

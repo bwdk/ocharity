@@ -15,21 +15,21 @@ p.login-remember{
 .action-button-linear {
     width: max-content;
 
-    border: 3px solid $main-color;
+    border: 2.5px solid $main-color;
     color: $main-color;
-    border-radius: 5px;
-    padding: 13px 30px;
+    border-radius: 30px;
+    padding: 14px 45px;
     text-transform: uppercase;
     font-weight: 700;
-    font-size:14px;
+    font-size: 14px;
     letter-spacing: 0.75px;
 
 
     &:hover {
         color: white;
-        background: $main-color;
-        padding: 13px 30px;
-        border: 3px solid $main-color;
+        padding: 14px 45px;
+        border: 2.5px solid white;
+        background: none !important;
     }
 
     a {

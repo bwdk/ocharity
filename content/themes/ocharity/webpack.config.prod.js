@@ -11,12 +11,12 @@ const autoprefixer = require('autoprefixer');
 let config = {
   entry: [
     './app/js/app.js',
-    './app/scss/main.scss',
+    './app/scss/main.scss'
   ],
   mode: 'production',
   output: {
     path: path.resolve(__dirname, "./public"),
-    filename: "js/app.js"
+    filename: "js/app.js",
   },
   optimization: {
     minimizer: [

@@ -1,61 +1,63 @@
 .footer {
-    display: flex;
-    margin-top: 2em;
     width: 100%;
-    flex-direction: column;
-
-
-
-    .footer__list {
-        columns: 3;
-    }
-
-    &__charity-address {
-        line-height: 27px;
-        // padding-left: 100px;
-        display: flex;
-        margin-left: 5%;
-
-        .address {
-            margin-right: 45px;
-        }
-
-        li {
-            font-size: 10px;
-        }
-    }
-
 
     &__topfooter {
-        padding: 35px 65px;
+        background-color: #f3fafa;
+        padding: 60px 0 30px 0;
         display: flex;
+        flex-flow: row wrap;
         justify-content: space-around;
-        background-color: $bg-alt-color;
+        align-items: flex-start;
+        text-align: left;
 
-        &-logo {
+        .flex-item {
+            width: 25%;
+            font-weight: 500;
 
             img {
-                padding: 8px 0 0 0;
-                width: 18em;
+                width: 23em;
             }
+
+            .address {
+                line-height: 2.5em;
+            }
+
+            li{
+                padding-bottom: 1.5em;
+            }
+    
         }
 
-        &-summary {
-            display: flex;
-            //width: 50%;
-
-            ul {
-                margin-left: 20%;
-            }
-
-            li {
-                line-height: 23px;
-            }
+        .flex-item-1 {
+            width: 35%;
+            text-align: center;
         }
 
+        .flex-item-2 {
+            width: 10%;
+        }
 
+        .flex-item-3 {
+            width: 15%;
+            padding-top: 15px;
 
+             ul li a i {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                line-height: 30px;
+                text-align: center;
+                background: #53B793;
+                color: #fff;
+            } 
+        }
+
+        .flex-item-4 {
+            width: 15%;
+            padding-top: 15px;
+        }
     }
+
 
     &__subfooter {
         padding: 20px 250px;
@@ -64,11 +66,23 @@
         font-weight: 500;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         font-size: $font-s;
+        padding: 10px 10%;
+
+       i {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            line-height: 30px;
+            text-align: center;
+            background: #fff;
+            color: #53B793;
+        }
 
         ul li {
             display: inline-block;
-            margin-right: 20px;
+            margin-right: 10px;
         }
 
         a {

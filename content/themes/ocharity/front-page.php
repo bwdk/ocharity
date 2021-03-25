@@ -34,96 +34,26 @@ $sumCollectDone = $wpdb->get_var("SELECT count(*) FROM $terms_table WHERE slug =
 ?>
 
 
-<div id="carousel" class="carou carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
-  <ol class="carousel-indicators">
-    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel" data-slide-to="1"></li>
-    <li data-target="#carousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner" role="listbox">
-    <div class="carousel-item active">
-      <!-- 
-                    If you need more browser support use https://scottjehl.github.io/picturefill/
-                    If a picture looks blurry on a retina device you can add a high resolution like this
-                    <source srcset="img/blog-post-1000x600-2.jpg, blog-post-1000x600-2@2x.jpg 2x" media="(min-width: 768px)">
-                    What image sizes should you use? This can help - https://codepen.io/JacobLett/pen/NjramL
-                     -->
-      <picture>
-        <source srcset="https://dummyimage.com/2000x857/e8faeb/a0ba86.jpg&text=protéger." media="(min-width: 1400px)">
-        <source srcset="https://dummyimage.com/1400x500/e8faeb/a0ba86.jpg&text=protéger." media="(min-width: 769px)">
-        <source srcset="https://dummyimage.com/800x500/e8faeb/a0ba86.jpg&text=protéger." media="(min-width: 577px)">
-        <img srcset="https://dummyimage.com/600x400/e8faeb/a0ba86.jpg&text=protéger." alt="responsive image" class="d-block img-fluid">
-      </picture>
-    </div>
-    <!-- /.carousel-item -->
-    <div class="carousel-item">
-      <picture>
-        <source srcset="https://dummyimage.com/2000x857/e8faeb/a0ba86.jpg&text=accompagner." media="(min-width: 1400px)">
-        <source srcset="https://dummyimage.com/1400x500/e8faeb/a0ba86.jpg&text=accompagner." media="(min-width: 769px)">
-        <source srcset="https://dummyimage.com/800x500/e8faeb/a0ba86.jpg&text=accompagner." media="(min-width: 577px)">
-        <img srcset="https://dummyimage.com/600x400/e8faeb/a0ba86.jpg&text=accompagner." alt="responsive image" class="d-block img-fluid">
-      </picture>
-    </div>
-    <!-- /.carousel-item -->
-    <div class="carousel-item">
-      <picture>
-        <source srcset="https://dummyimage.com/2000x857/e8faeb/a0ba86.jpg&text=contribuer." media="(min-width: 1400px)">
-        <source srcset="https://dummyimage.com/1400x500/e8faeb/a0ba86.jpg&text=contribuer." media="(min-width: 769px)">
-        <source srcset="https://dummyimage.com/800x500/e8faeb/a0ba86.jpg&text=contribuer." media="(min-width: 577px)">
-        <img srcset="https://dummyimage.com/600x400/e8faeb/a0ba86.jpg&text=contribuer." alt="responsive image" class="d-block img-fluid">
-      </picture>
-    </div>
-    <!-- /.carousel-item -->
-  </div>
-  <!-- /.carousel-inner -->
-  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-<!-- /.carousel -->
-<!-- /.container -->
-<!-- <div class="text-title">
-  <p>Lorem ipsum</p>
-  <h2>Lorem ipsum dolor sit amet</h2>
-</div>
+<div class="hero__frontpage" style="background-image: url('<?php echo get_template_directory_uri(); ?>/public/images/slide-5.png');">
 
- <section class="main-activities section">
-  <div class="section__container">
-    <div class="activities-box">
-      <div class="content">
-        <span class="content--icon"><img src="<?php echo get_template_directory_uri(); ?>/public/images/animal.svg"></span>
-        <h3>Lorem ipsum</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="content">
-        <span class="content--icon"><img src="<?php echo get_template_directory_uri(); ?>/public/images/education.svg"></span>
-        <h3>Lorem ipsum</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="content">
-        <span class="content--icon"><img src="<?php echo get_template_directory_uri(); ?>/public/images/environnement.svg"></span>
-        <h3>Lorem ipsum</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="content">
-        <span class="content--icon"><img src="<?php echo get_template_directory_uri(); ?>/public/images/eau.svg"></span>
-        <h3>Lorem ipsum</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
+  <div class="hero-title">
+    <h2>Soutenez nos actions en cours</h2>
+    <p>O'Charity est une association caritative qui intervient dans différents pays et sur différents champs d'actions. Découvrez la liste de nos actions en cours.</p>
   </div>
-</section>  -->
+
+  <section class="calltoaction">
+    <a href="<?php echo get_permalink(get_page_by_path('actions-en-cours')); ?>" class="action-button">
+      Voir nos actions
+    </a>
+  </section>
+
+</div>
 
 <main class="main__frontpage">
 
   <div class="text-title" style="background-color:#f3fafa;">
-    <p>Contribuer</p>
-    <h2>Soutenez les collectes en cours</h2>
+    <h2>Contribuez à nos collectes en cours</h2>
+    <p>Nous avons plusieurs collectes en cours qui nécessitent des dons. </p>
   </div>
 
   <div class="theme">
@@ -165,6 +95,7 @@ $sumCollectDone = $wpdb->get_var("SELECT count(*) FROM $terms_table WHERE slug =
     $wpqueryCollectesReussies = new WP_Query($args);
     ?>
   </div>
+
   <div class="section__tpl">
     <div class="section__cards__actions">
       <?php
@@ -198,8 +129,8 @@ $sumCollectDone = $wpdb->get_var("SELECT count(*) FROM $terms_table WHERE slug =
 
 <div class="map-container">
   <div class="text-title" style="background-color:#fff;">
-    <p>De par le monde</p>
-    <h2>Actions en cours</h2>
+    <h2>Nos actions dans le monde</h2>
+    <p>Découvrez les différents pays dans lesquels nous intervenons.</p>
   </div>
   <div id="map">
     <div class="img-container">
@@ -222,7 +153,7 @@ $sumCollectDone = $wpdb->get_var("SELECT count(*) FROM $terms_table WHERE slug =
 </div>
 
 
-<section class="about-counter">
+<section class="about-counter" style="background-image: url('<?php echo get_template_directory_uri(); ?>/public/images/slide-2-counter.png');">
   <ul id="counter">
     <li>
       +<span class="count percent" data-count="250">
@@ -258,35 +189,6 @@ $sumCollectDone = $wpdb->get_var("SELECT count(*) FROM $terms_table WHERE slug =
   </span>
 </section>
 
-<section class="main-about-section">
-
-  <div class="section__tpl">
-
-
-
-
-
-    <div class="about-content">
-
-      <div class="about__img">
-        <div class="about__pic">
-          <img class="about__pic" src="https://source.unsplash.com/590x360/?children,happy" alt="">
-        </div>
-        <div class="text-box">
-          <div class="about__text">
-            <h3 class="text__box__title">Agir
-              ensemble</h3>
-            <p class="about__text__p">L’aide apportée par les donateurs permet à de nombreuses personnes et<br> associations de finaliser leurs projets.
-              Plus qu’un apport financier, votre contribution<br> est l’espoir de voir se concrétiser des rêves d’entreprendre.<br> Participez à l’aventure humaine…
-
-              <div class="text__box__button"><a href="<?php echo get_permalink(get_page_by_path('actions-en-cours')); ?>" class="action-button">Voir plus</a></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 
 <?php get_footer(); ?>

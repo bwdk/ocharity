@@ -38,7 +38,6 @@ var app = {
             },
 
             {
-
               duration: 2000,
               easing: 'swing',
               step: function () {
@@ -96,6 +95,13 @@ var app = {
       });
 
     // Mobile
+    app.menuMobile();
+
+
+
+  },
+
+  menuMobile: () => {
     let openMenu = document.querySelector(".menu");
     let closeMenu = document.querySelector(".close");
     let overlay = document.querySelector(".overlay");
@@ -107,9 +113,6 @@ var app = {
     closeMenu.addEventListener("click", () => {
       overlay.classList.remove("overlay--active");
     });
-
-
-
   },
 
   enableScrollex: function () {

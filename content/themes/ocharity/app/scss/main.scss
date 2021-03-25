@@ -34,7 +34,6 @@
 'sections/404/404';
 
 @import 'sections/homepage/categories',
-'sections/homepage/slideshow',
 'sections/homepage/our-actions',
 'sections/homepage/main-gallery',
 'sections/homepage/countries',
@@ -49,5 +48,4 @@
 
 @import '~font-awesome/scss/font-awesome';
 
-@import 'shame',
-'home-style';
+@import 'shame';
