@@ -265,18 +265,21 @@ input.input {
 
 .section__tpl .sidebar {
   height: 40%;
-  border: 1px solid #b9b9b9;
-  padding: 35px;
-  width: 25%;
-  margin: 0 4rem;
+  background-color: #f3fafa;
+  border-radius: 6px;
+  padding: 20px 50px 10px 50px;
+  width: 18%;
+  margin: 0 18rem 0 0;
   order: 2;
-  text-align: center; }
+  /*         text-align: center; */ }
   .section__tpl .sidebar__title {
     font-size: 22px;
     margin-bottom: 25px;
     margin-top: 45px; }
   .section__tpl .sidebar__list li {
     margin-bottom: 25px; }
+  .section__tpl .sidebar h4 {
+    font-weight: 600; }
 
 @media only screen and (max-width: 930px) {
   .section__tpl .sidebar {
@@ -669,7 +672,7 @@ a:hover {
     margin-right: 30px; }
   .header .top__menu li {
     font-weight: 500;
-    margin-right: 16px; }
+    margin-right: 25px; }
   .header .top__menu.fixed {
     position: fixed;
     width: 100%;
@@ -754,18 +757,20 @@ main {
     margin: 0 auto;
     width: 80%;
     margin-top: 50px;
-    justify-content: center; }
+    justify-content: center;
+    padding-bottom: 100px; }
     main .section__tpl__block__login-page {
       flex-direction: column;
       align-self: center;
       margin: 0 20px; }
   main .cat__list {
+    font-weight: 500;
     margin-bottom: 25px;
-    margin-left: 10px;
-    background-color: #78CAAC;
-    border: 1px solid #78CAAC;
+    margin-left: 20px;
+    background-color: #53B793;
+    border: 1px solid #53B793;
     border-radius: 5px;
-    padding: 5px;
+    padding: 15px 25px;
     font-size: 14px;
     color: white;
     line-height: 40px; }
@@ -887,13 +892,14 @@ main {
   justify-content: center;
   flex-direction: column;
   height: 320px;
-  background-image: url("https://source.unsplash.com/0GBxtiFvzXE/2400x1600"); }
-  .title h2 {
-    font-size: 3em;
-    color: white;
-    margin-bottom: 30px; }
+  background-color: #53B793; }
+  .title h1 {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 50px;
+    color: white; }
   .title p {
-    font-size: 15px;
     color: #fff; }
 
 .container {
@@ -975,6 +981,31 @@ main {
   margin-top: 7px;
   margin-bottom: 7px; }
 
+.everest-forms .everest-forms-part-button, .everest-forms button, .everest-forms button[type=submit], .everest-forms input[type=submit] {
+  margin-top: 40px;
+  width: max-content;
+  z-index: 2;
+  border: 2.5px solid #53B793;
+  background-color: #53B793;
+  color: white;
+  border-radius: 30px;
+  padding: 14px 45px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px; }
+  .everest-forms .everest-forms-part-button:hover, .everest-forms button:hover, .everest-forms button[type=submit]:hover, .everest-forms input[type=submit]:hover {
+    color: #53B793;
+    padding: 14px 45px;
+    border: 2.5px solid #53B793;
+    background: none !important; }
+  .everest-forms .everest-forms-part-button a, .everest-forms button a, .everest-forms button[type=submit] a, .everest-forms input[type=submit] a {
+    text-decoration: none;
+    color: white; }
+  .everest-forms .everest-forms-part-button a:hover, .everest-forms button a:hover, .everest-forms button[type=submit] a:hover, .everest-forms input[type=submit] a:hover {
+    color: #53B793;
+    background-color: white; }
+
 .error__content {
   margin-left: 20px;
   margin-top: 50px;
@@ -1044,8 +1075,8 @@ main {
 
 .theme {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px; }
+  margin-top: 85px;
+  margin-bottom: 75px; }
   .theme ul {
     display: flex;
     justify-content: center; }
@@ -1466,7 +1497,7 @@ progress[value]::-webkit-progress-value {
 
 .raising__text p {
   font-size: 17px;
-  line-height: 25px; }
+  line-height: 30px; }
 
 .raising__text span {
   font-size: 18px;
@@ -1479,8 +1510,7 @@ progress[value]::-webkit-progress-value {
 
 .fundraiser__image img {
   width: 100%;
-  height: auto;
-  margin-top: 10px; }
+  height: auto; }
 
 .lastp {
   text-align: right; }
@@ -1532,7 +1562,8 @@ h2 {
 .fundraiser__image img {
   width: 100%;
   height: auto;
-  margin: 20px 0 20px; }
+  margin-bottom: 50px;
+  border-radius: 10px; }
 
 .raising__text h2 {
   padding-top: 0px;
@@ -1543,8 +1574,9 @@ h2 {
   line-height: 25px; }
 
 .fundraiser__progress-box {
-  border: 2px solid #dfdfdf;
-  padding: 30px; }
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #F9F9F9; }
 
 .fundraiser__progress-box__bar {
   display: grid;
@@ -1595,9 +1627,10 @@ h2 {
   padding-right: 20px; }
 
 .formdiv {
-  margin-top: 70px;
-  background: #F9F9F9;
-  padding: 80px 80px; }
+  margin-top: 62px;
+  background: #f3fafa;
+  padding: 55px 65px;
+  border-radius: 10px; }
 
 h2 {
   font-size: 40px; }
@@ -1642,9 +1675,10 @@ h2 {
   .section__container {
     width: 100%; }
   .formdiv {
-    margin-top: 30px;
-    background: #D7D6D6;
-    padding: 80px 80px; } }
+    margin-top: 62px;
+    background: #f3fafa;
+    padding: 55px 65px;
+    border-radius: 10px; } }
 
 @media only screen and (max-width: 904px) and (min-width: 769px) {
   .action-button {
@@ -1657,8 +1691,9 @@ h2 {
   .raising__form__text {
     margin-top: 25px;
     margin-bottom: 25px;
-    font-weight: bold;
-    text-align: left; }
+    font-weight: 400;
+    line-height: 1.5em;
+    text-align: center; }
     .raising__form__text--subtn {
       margin: 25px 0;
       font-weight: bold; }

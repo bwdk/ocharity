@@ -4,13 +4,15 @@
     justify-content: center;
     flex-direction: column;
     height: $height;
-   // background-image: url("https://source.unsplash.com/1400x320/?grass");
+    background-color: #53B793;
 
 
     h2 {
-        font-size: 3em;
-        color: $title-color;
-        margin-bottom: 30px;
+        text-align: center;
+        font-size: 45px;
+        font-weight: 800;
+        line-height: 50px;
+        color: white;
     }
 
     p {

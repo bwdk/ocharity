@@ -4,17 +4,18 @@
     justify-content: center;
     flex-direction: column;
     height: $height;
-    background-image: url("https://source.unsplash.com/0GBxtiFvzXE/2400x1600");
+    background-color: #53B793;
 
 
-    h2 {
-        font-size: 3em;
-        color: $title-color;
-        margin-bottom: 30px;
+    h1 {
+        text-align: center;
+        font-size: 45px;
+        font-weight: 800;
+        line-height: 50px;
+        color: white;
     }
 
     p {
-        font-size: $font-text;
         color: #fff;
     }
 

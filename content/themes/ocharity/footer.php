@@ -29,7 +29,7 @@
           <?php if (get_theme_mod('ocharity_footer_email')) : ?>
             <li>
               <a href="mailto:<?php echo get_theme_mod('ocharity_footer_email'); ?>">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <i class="fa fa-comments" aria-hidden="true"></i>
                 <span> &nbsp; <?php echo get_theme_mod('ocharity_footer_email'); ?></span>
               </a>
             </li>

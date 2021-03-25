@@ -8,7 +8,8 @@
 .fundraiser__image img {
 	width: 100%;
 	height: auto;
-	margin: 20px 0 20px;
+	margin-bottom: 50px;
+	border-radius: 10px;
 }
 
 .raising__text {
@@ -28,8 +29,9 @@
 
 
 .fundraiser__progress-box {
-	border: 2px solid #dfdfdf;
 	padding: 30px;
+	border-radius: 10px;
+	background-color: #F9F9F9;
 }
 
 .fundraiser__progress-box__bar {
@@ -94,10 +96,10 @@
 }
 
 .formdiv {
-	margin-top: 70px;
-	background: $bg-color;
-	padding: 80px 80px;
-
+    margin-top: 62px;
+    background: #f3fafa;
+	padding: 55px 65px;
+	border-radius: 10px;
 }
 
 h2 {
@@ -156,9 +158,10 @@ h2 {
 	}
 
 	.formdiv {
-		margin-top: 30px;
-		background: #D7D6D6;
-		padding: 80px 80px;
+		margin-top: 62px;
+		background: #f3fafa;
+		padding: 55px 65px;
+		border-radius: 10px;
 	}
 
 
