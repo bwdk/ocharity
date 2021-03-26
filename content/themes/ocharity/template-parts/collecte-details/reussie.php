@@ -18,7 +18,7 @@ FROM $donation_amt_table
 WHERE collecte_id = $page_id"); //page_id équivaut au custom post type en cours
 
 // Calcule le nombre de donations
-$sumDonations = $wpdb->get_var("SELECT COUNT(DISTINCT(collecte_id))
+$sumDonations = $wpdb->get_var("SELECT COUNT(DISTINCT(donor_id))
 FROM $donation_amt_table
 WHERE collecte_id = $page_id");
 

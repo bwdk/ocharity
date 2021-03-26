@@ -1,6 +1,5 @@
 <?php
 
-
 global $errormsg;
 global $current_user;
 
@@ -23,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $errormsg->add('amount', '<div class="message__fail">Le champ montant est obligatoire</div>');
     }
   }
-
 
   // If "amount" is sended, then post the form and redirect to validation page
   if (isset($method['amount'])) {
@@ -59,8 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
   }
 }
-
-
 
 $statut = get_query_var('statut');
 $page_state = get_query_var('page_state');

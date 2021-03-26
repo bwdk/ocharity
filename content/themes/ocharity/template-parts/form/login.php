@@ -17,7 +17,6 @@ if (($queryDonate->query_vars['page_state']) == 'login' &&  ($queryDonate->query
         <p>Vos identifiants sont erronés</p>
     </div>
 
-    <?php dump($login); ?>
 
 <?php
 elseif (isset($_GET['login']) && $_GET['login'] == 'empty') :

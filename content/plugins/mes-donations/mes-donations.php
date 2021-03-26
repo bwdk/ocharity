@@ -11,6 +11,7 @@ if (!defined('WPINC')) {
     die();
 }
 add_action('admin_menu', 'donation_plugin_setup_menu');
+
 function donation_plugin_setup_menu()
 {
     add_menu_page('Liste des donations', 'Donations', 'manage_options', 'donations_list', 'donations_init', 'dashicons-share-alt', 6);
@@ -95,7 +96,6 @@ function donations_init()
             </div>
             <!--Affichage du montant-->
             <div class="display">
-
                 <!--Aujourd'hui-->
                 <div class="displayDay">
                     <?php if ($sumOverCurrentDay === null) {
@@ -105,27 +105,22 @@ function donations_init()
                     }
                     ?>
                 </div>
-
                 <!--Les 7 derniers jours-->
                 <div class="displayWeek">
-                    <?php echo "Les 7 derniers jours : " . esc_attr($sumOverLastWeek) . "&euro;"; ?>
+                    <?php echo "7 jours :<br> " . esc_attr($sumOverLastWeek) . "&euro;"; ?>
                 </div>
-
                 <!--Les 30 derniers jours-->
                 <div class="displayMonth">
-                    <?php echo "Les 30 derniers jours : " . esc_attr($sumOverLastMonth) . "&euro;"; ?>
+                    <?php echo "30 jours :<br> " . esc_attr($sumOverLastMonth) . "&euro;"; ?>
                 </div>
-
                 <!--Les 30 derniers jours-->
                 <div class="displayAll">
                     <?php
-                    echo "Total des dons : " . esc_attr($sumAllTime) . "&euro;";
+                    echo "Total : " . esc_attr($sumAllTime) . "&euro;";
                     ?>
                 </div>
 
             </div>
-
-
         </div>
 
         <script type="text/javascript">
