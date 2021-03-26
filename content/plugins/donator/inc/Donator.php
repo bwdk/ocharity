@@ -43,7 +43,6 @@ class Donator
         //    }
     }
 
-
     /**
      * Activate plugin
      * @return void
