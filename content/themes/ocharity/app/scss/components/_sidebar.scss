@@ -2,12 +2,13 @@
 
     .sidebar {
         height: 40%;
-        border: 1px solid rgb(185, 185, 185);
-        padding: 35px;
-        width: 25%;
-        margin: 0 4rem;
+        background-color: #f3fafa;
+        border-radius: 6px;
+        padding: 20px 50px 10px 50px;
+        width: 18%;
+        margin: 0 18rem 0 0;
         order: 2;
-        text-align: center;
+/*         text-align: center; */
 
 
         &__title {
@@ -23,7 +24,12 @@
                 margin-bottom: 25px;
             }
         }
+
+        h4 {
+            font-weight: 600;
+        }
     }
+
 
     @media only screen and (max-width: 930px) {
 

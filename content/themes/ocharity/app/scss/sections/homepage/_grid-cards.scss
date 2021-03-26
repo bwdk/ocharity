@@ -98,21 +98,22 @@ $transition: .2s;
 
   }
 
+
   &__action-button {
 
     margin-top: 100px;
 
-    border: 0.65px solid $main-color;
+    width: max-content;
+    z-index: 2;
+    border: 2.5px solid $main-color;
     background-color: $main-color;
     color: white;
-    border-radius: 5px;
-    padding: 13px 30px;
+    border-radius: 30px;
+    padding: 14px 45px;
     text-transform: uppercase;
-    text-align: center;
-    font-size: 42px;
     font-weight: 700;
-    font-size:14px;
-    letter-spacing: 0.75px;
+    font-size: 13px;
+    letter-spacing: 2px;
 
   
     a {
@@ -135,10 +136,10 @@ $transition: .2s;
   
     &:hover {
   
-        color: $main-color;
-        padding: 11px 28px;
-        border: solid $main-color;
-        background-color: white;
+      color: $main-color;
+      padding: 14px 45px;
+      border: 2.5px solid $main-color;
+      background: none !important;
   
         &:before,
         &:after {

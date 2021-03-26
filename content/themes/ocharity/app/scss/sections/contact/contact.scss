@@ -50,3 +50,36 @@
     margin-top: 7px;
     margin-bottom: 7px;
 }
+
+.everest-forms .everest-forms-part-button, .everest-forms button, .everest-forms button[type=submit], .everest-forms input[type=submit] {
+    margin-top: 40px;
+    width: max-content;
+    z-index: 2;
+    border: 2.5px solid $main-color;
+    background-color: $main-color;
+    color: white;
+    border-radius: 30px;
+    padding: 14px 45px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+
+
+    &:hover {
+        color: $main-color;
+        padding: 14px 45px;
+        border: 2.5px solid $main-color;
+        background: none !important;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover {
+        color: $main-color;
+        background-color: white;
+    }
+}

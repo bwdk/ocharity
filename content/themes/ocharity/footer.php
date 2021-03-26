@@ -1,49 +1,57 @@
 </main>
 <footer class="footer">
+
   <div class="footer__topfooter">
-    <ul>
-      <li>
-        <div class="footer__topfooter-logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/public/images/logo-ocharity.png" height="50%" width="50% alt=" logo"></a></div>
-    </ul>
-    </li>
-    <div class="footer__charity-address">
 
-      <?php if (get_theme_mod('ocharity_footer_address')) : ?>
-        <p class="address"><?php echo nl2br(get_theme_mod('ocharity_footer_address')); ?></p>
-      <?php endif; ?>
+      <div class="flex-item flex-item-1">
+        <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/public/images/ocharity-logo.png" height="50%" width="50%" alt="logo"></a>
+      </div>
 
-      <ul>
-        <?php if (get_theme_mod('ocharity_footer_num')) : ?>
-          <li>
-            <a href="<?php echo get_theme_mod('ocharity_footer_num'); ?>">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span><?php echo get_theme_mod('ocharity_footer_num'); ?></span>
-            </a>
-          </li>
+      <div class="flex-item flex-item-2">
+        <?php if (get_theme_mod('ocharity_footer_address')) : ?>
+          <p class="address"><?php echo nl2br(get_theme_mod('ocharity_footer_address')); ?></p>
         <?php endif; ?>
+      </div>
 
-        <?php if (get_theme_mod('ocharity_footer_email')) : ?>
-          <li>
-            <a href="mailto:<?php echo get_theme_mod('ocharity_footer_email'); ?>">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span><?php echo get_theme_mod('ocharity_footer_email'); ?></span>
-            </a>
-          </li>
-        <?php endif; ?>
-    </div>
+      <div class="flex-item flex-item-3">
 
-    <?php
-    wp_nav_menu([
-      'theme_location' => 'footer-menu',
-      'container' => 'div',
-      'container_class' => 'footer__topfooter-summary',
-      'items_wrap' => '<ul class="footer__list">%3$s</ul>'
-    ]);
+        <ul>
 
-    ?>
+          <?php if (get_theme_mod('ocharity_footer_num')) : ?>
+            <li>
+              <a href="<?php echo get_theme_mod('ocharity_footer_num'); ?>">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span> &nbsp; <?php echo get_theme_mod('ocharity_footer_num'); ?></span>
+              </a>
+            </li>
+          <?php endif; ?>
 
+          <?php if (get_theme_mod('ocharity_footer_email')) : ?>
+            <li>
+              <a href="mailto:<?php echo get_theme_mod('ocharity_footer_email'); ?>">
+                <i class="fa fa-comments" aria-hidden="true"></i>
+                <span> &nbsp; <?php echo get_theme_mod('ocharity_footer_email'); ?></span>
+              </a>
+            </li>
+          <?php endif; ?>
+
+        </ul>
+
+      </div>
+
+      <div class="flex-item flex-item-4">
+        <?php
+          wp_nav_menu([
+            'theme_location' => 'footer-menu',
+            'container' => 'div',
+            'container_class' => 'footer__topfooter-summary',
+            'items_wrap' => '<ul class="footer__list">%3$s</ul>'
+          ]);
+        ?>
+      </div>
 
   </div>
+
   <div class="footer__subfooter">
 
     <ul>

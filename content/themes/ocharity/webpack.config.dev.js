@@ -27,7 +27,7 @@ let config = {
   mode: 'development',
   output: {
     path: path.resolve(__dirname, "./public"),
-    filename: "js/app.js"
+    filename: "js/app.js",
   },
   devtool: 'source-map',
   module: {
