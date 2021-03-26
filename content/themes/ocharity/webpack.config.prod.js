@@ -2,11 +2,12 @@
 
 const webpack = require("webpack");
 const path = require("path");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+//const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+//const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const TerserPlugin = require("terser-webpack-plugin");
 
 let config = {
   entry: [
@@ -19,13 +20,15 @@ let config = {
     filename: "js/app.js",
   },
   optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-      }),
-      new OptimizeCSSAssetsPlugin({})
-    ]
+    // minimizer: [
+    //   new UglifyJsPlugin({
+    //     cache: true,
+    //     parallel: true,
+    //   }),
+    //   new OptimizeCSSAssetsPlugin({})
+    // ]
+    minimize: true,
+    minimizer: [new TerserPlugin()],
   },
   module: {
     rules: [
@@ -38,7 +41,7 @@ let config = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: function() {
+              plugins: function () {
                 return autoprefixer({
                   overrideBrowserslist: ['last 4 versions']
                 });
@@ -61,8 +64,8 @@ let config = {
           }
         },
       },
-       // Images
-       {
+      // Images
+      {
         test: /\.(jpg|jpeg|png|gif|svg)$/,
         use: {
           loader: 'file-loader',
@@ -84,14 +87,12 @@ let config = {
       $: 'jquery',
       jQuery: 'jquery',
     }),
-    new CopyPlugin([
-      {
-        from: 'app/assets/**',
-        to: '.',
-        toType: 'dir',
-        transformPath: (targetPath) => targetPath.replace(/^app\/assets\//, '')
-      }
-    ]),
+    new CopyPlugin([{
+      from: 'app/assets/**',
+      to: '.',
+      toType: 'dir',
+      transformPath: (targetPath) => targetPath.replace(/^app\/assets\//, '')
+    }]),
   ]
 };
 

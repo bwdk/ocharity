@@ -9,15 +9,13 @@ get_header();
 <div class="title">
     <h1 class="h1">Connexion</h1>
 </div>
-
 <main class="main">
 
     <div class="section__tpl">
         <div class="section__tpl__block__login-page">
-            <!-- <h1 class="section__title">Connexion</h1> -->
+            <h1 class="section__title">Connexion</h1>
             <?php if (isset($_GET['login']) && $_GET['login'] == 'failed') {
             ?>
-
 
                 <div class="message__fail">
                     <p>Identifiants incorrects</p>
@@ -26,7 +24,6 @@ get_header();
 
 
             } ?>
-
 
             <?php if (isset($_GET['login']) && $_GET['login'] == 'empty') {
 
@@ -37,6 +34,7 @@ get_header();
                 </div>
 
             <?php } ?>
+
 
 
             <div class="raising__form formdiv">

@@ -2,11 +2,10 @@
 
     width: 60%;
 
-
     .section__cards__actions {
         order: 1;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
         grid-gap: 5rem;
         cursor: pointer;
         height: 100%;
@@ -80,10 +79,6 @@
             border-radius: 2px;
             background-size: 35px 20px, 100% 100%, 100% 100%;
 
-
         }
-
-
     }
-
 }

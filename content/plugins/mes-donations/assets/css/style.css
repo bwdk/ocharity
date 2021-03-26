@@ -1,0 +1,52 @@
+.tablesorter-pager .btn-group-sm .btn {
+    font-size: 1.2em;
+}
+
+h2 {
+    padding-bottom: 20px;
+}
+
+p {
+    font-size : 18px;
+}
+
+.dropdown {
+    padding-bottom: 70px;
+    margin-right: 20px;
+}
+
+.display{
+    width: 10%;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.displayWeek{
+    display: none;
+}
+
+.displayMonth{
+    display: none;
+}
+
+.displayAll {
+    display: none;
+}
+
+.wrapper {
+    padding-top: 30px;
+    padding-right: 70px;
+    padding-left: 55px;
+}
+
+thead {
+    padding-top: 20px;
+}
+
+.euro {
+
+    font-size: 20px;
+    font-weight: bold;
+}

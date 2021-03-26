@@ -173,15 +173,18 @@ function zm_preview_thumb_column($column_name, $post_ID)
     }
 }
 add_action('manage_posts_custom_column', 'zm_preview_thumb_column', 10, 2);
+
+
 // Fonction permettant de cacher la barre admin pour tous les utilisateurs 
 //qui ne peuvent pas éditer de poste (donc tous sauf admin et editeur)
-add_action('set_current_user', 'customer_hide_admin_bar');
 function customer_hide_admin_bar()
 {
     if (!current_user_can('edit_posts')) {
         add_filter('show_admin_bar', '__return_false');
     }
 }
+add_action('set_current_user', 'customer_hide_admin_bar');
+
 /**
  * Template chooser
  *
@@ -301,4 +304,4 @@ function login_form_sc()
     return wp_login_form($args);
 }
 add_shortcode('wp_login_form_sc', 'login_form_sc');
-add_action('login_failed_action', 'login_form_sc');
+//add_action('login_failed_action', 'login_form_sc');

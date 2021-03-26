@@ -39,7 +39,7 @@ global $post;
 
 
         <?php
-        //On définit une requête qui permet d'afficher les éléments de la catégorie "en cours" avec un affichage de 4 posts par page
+        //On définit une requête qui permet d'afficher les éléments de la catégorie "en cours" avec un affichage de 9 posts par page
         $args = [
             'post_type' => 'collecte',
             'posts_per_page' => 9,
@@ -59,7 +59,7 @@ global $post;
         $wpqueryCollectesReussies = new WP_Query($args);
         ?>
     </div>
-    <div class="section__tpl">
+    <div class="section__tpl frontpage">
         <?php get_sidebar(); ?>
 
         <?php

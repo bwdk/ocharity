@@ -438,7 +438,7 @@ input.input {
   .section__tpl .section__cards__actions {
     order: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
     grid-gap: 5rem;
     cursor: pointer;
     height: 100%;
@@ -498,6 +498,7 @@ body {
   margin: 0; }
 
 .main {
+
   margin-bottom: 0px;
   min-height: calc(100vh - auto); }
 
@@ -775,7 +776,7 @@ main {
     color: white;
     line-height: 40px; }
   @media only screen and (max-height: 930px) {
-    main .section__tpl {
+    main .frontpage {
       width: 100%; } }
 
 .footer {
