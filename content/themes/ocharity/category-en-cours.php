@@ -38,7 +38,8 @@ global $post;
 
 
         <?php
-        //On définit une requête qui permet d'afficher les éléments de la catégorie "en cours" avec un affichage de 9 posts par page
+        //On définit une requête qui permet d'afficher les éléments de la catégorie 
+        //"en cours" 
         $args = [
             'post_type' => 'collecte',
             'posts_per_page' => 9,
